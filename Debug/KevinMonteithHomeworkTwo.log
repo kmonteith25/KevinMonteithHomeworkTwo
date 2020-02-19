@@ -1,0 +1,10 @@
+﻿  Deck.cpp
+C:\Users\Kmont\source\repos\KevinMonteithHomeworkTwo\KevinMonteithHomeworkTwo\Deck.cpp(5,16): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+C:\Users\Kmont\source\repos\KevinMonteithHomeworkTwo\KevinMonteithHomeworkTwo\Deck.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
+  KevinMonteithHomeworkTwo.vcxproj -> C:\Users\Kmont\source\repos\KevinMonteithHomeworkTwo\Debug\KevinMonteithHomeworkTwo.exe
