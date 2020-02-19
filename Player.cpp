@@ -2,21 +2,23 @@
 
 int Player::getHandTotal()
 {
-	return 0;
+	return hand.getTotal();
 }
 
-void Player::addCardToHand()
+void Player::addCardToHand(Card* card)
 {
+	this->hand.addCard(card);
 }
 
 void Player::splitHand()
 {
 }
 
-void Player::requestHit()
+void Player::requestHit(Dealer* dealer)
 {
+	this->addCardToHand(dealer->hit());
+	std::cout << this->hand.getTotal() << "POP" << std::endl;
 }
-
 void Player::requestStand()
 {
 }

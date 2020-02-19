@@ -51,3 +51,11 @@ void Hand::addCard(Card* card)
 {
 	hand.push_back(card);
 }
+
+Hand::Hand()
+{
+}
+
+Hand::~Hand()
+{
+}
