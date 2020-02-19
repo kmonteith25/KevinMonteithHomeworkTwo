@@ -1,9 +1,13 @@
 #include <iostream>
-#include "Deck.h"
+#include "BlackJack.h"
+
 
 int main() {
-    Deck* d = new Deck();
-    d->shuffle();
-    d->getNextCard();
+    //Dealer* dealer = new Dealer();
+    //Player* player = new Player();
+
+    //player->requestHit(dealer);
+    BlackJack* game = new BlackJack();
+    game->runGame();
     return 0;
 }

@@ -8,8 +8,9 @@ void Deck::shuffle()
 
 Card* Deck::getNextCard()
 {
-	std::cout << deck.back()->getSuit() << " " << deck.back()->getRank() << std::endl;
-	return deck.back();
+	Card* tempBack = deck.back();
+	deck.pop_back();
+	return tempBack;
 }
 
 void Deck::printDeck()
