@@ -52,6 +52,14 @@ void Hand::addCard(Card* card)
 	hand.push_back(card);
 }
 
+void Hand::printHand()
+{
+	for (int i = 0; i < hand.size(); i++) {
+		std::cout << hand[i]->getSuit() << " " << hand[i]->getRank() << std::endl;
+	}
+	
+}
+
 Hand::Hand()
 {
 }

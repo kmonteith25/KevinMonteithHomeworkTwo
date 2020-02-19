@@ -14,6 +14,7 @@ public:
 	std::vector<Card*> getCards();
 	int getTotal();
 	void addCard(Card* card);
+	void printHand();
 	Hand();
 	~Hand();
 };

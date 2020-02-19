@@ -2,6 +2,7 @@
 
 #include "Hand.h"
 #include "Dealer.h"
+
 class Player
 {
 private:
@@ -11,7 +12,10 @@ public:
 	void addCardToHand(Card* card);
 	void splitHand();
 	void requestHit(Dealer* dealer);
+	void requestDeal(Dealer* dealer);
+	void printHand();
 	void requestStand();
+	bool isHandBust();
 	Player();
 	~Player();
 };

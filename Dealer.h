@@ -6,6 +6,7 @@ class Dealer
 {
 public:
 	void revealHoleCard();
+	void shuffle();
 	Card* hit();
 
 private:

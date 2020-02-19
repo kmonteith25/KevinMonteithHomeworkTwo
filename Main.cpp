@@ -1,12 +1,13 @@
 #include <iostream>
-#include "Player.h"
-#include "Dealer.h"
+#include "BlackJack.h"
 
 
 int main() {
-    Dealer* dealer = new Dealer();
-    Player* player = new Player();
+    //Dealer* dealer = new Dealer();
+    //Player* player = new Player();
 
-    player->requestHit(dealer);
+    //player->requestHit(dealer);
+    BlackJack* game = new BlackJack();
+    game->runGame();
     return 0;
 }

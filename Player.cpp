@@ -17,10 +17,25 @@ void Player::splitHand()
 void Player::requestHit(Dealer* dealer)
 {
 	this->addCardToHand(dealer->hit());
-	std::cout << this->hand.getTotal() << "POP" << std::endl;
 }
+
+void Player::requestDeal(Dealer* dealer)
+{
+	this->addCardToHand(dealer->hit());
+	this->addCardToHand(dealer->hit());
+}
+void Player::printHand()
+{
+	hand.printHand();
+}
+
 void Player::requestStand()
 {
+}
+
+bool Player::isHandBust()
+{
+	return hand.isBust();
 }
 
 Player::Player()
