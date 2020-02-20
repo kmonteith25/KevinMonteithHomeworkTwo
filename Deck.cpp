@@ -1,11 +1,13 @@
 #include "Deck.h"
 
+//randomly shuffles vector based on seed based on time
 void Deck::shuffle()
 {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 	std::shuffle(std::begin(this->deck), std::end(this->deck), std::default_random_engine(seed));
 }
 
+//gets card from back of vector then removes it from the deck
 Card* Deck::getNextCard()
 {
 	Card* tempBack = deck.back();
@@ -13,6 +15,7 @@ Card* Deck::getNextCard()
 	return tempBack;
 }
 
+//prints out deck for debugging
 void Deck::printDeck()
 {
 	for (int i = 0; i < deck.size(); i++) {
@@ -25,12 +28,15 @@ Deck::Deck()
 	resetDeck();
 }
 
+//clears out deck vector
 void Deck::clearDeck() {
 	deck.clear();
 	
 }
 
+//clears deck then fills it back up with new cards
 void Deck::resetDeck() {
+	clearDeck();
 	for (int i = 1; i <= 4; i++) {
 		std::string suit = "unknown";
 		switch (i) {

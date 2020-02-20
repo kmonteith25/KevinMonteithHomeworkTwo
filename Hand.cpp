@@ -1,5 +1,6 @@
 #include "Hand.h"
 
+//checks if hand value is greater than 21
 bool Hand::isBust()
 {
 	if (this->getTotal() > 21) {
@@ -10,16 +11,19 @@ bool Hand::isBust()
 	}
 }
 
+//clears out hand vector
 void Hand::clearHand()
 {
 	hand.clear();
 }
 
+//returns card vector
 std::vector<Card*> Hand::getCards()
 {
 	return std::vector<Card*>();
 }
 
+//gets hand total, if over and has ace we will deduct 10 and treat ace as one
 int Hand::getTotal()
 {
 	int aceNum = 0;
@@ -47,11 +51,13 @@ int Hand::getTotal()
 	return handTotal;
 }
 
+//adds card to vector
 void Hand::addCard(Card* card)
 {
 	hand.push_back(card);
 }
 
+//prints full hand
 void Hand::printHand()
 {
 	for (int i = 0; i < hand.size(); i++) {
@@ -60,6 +66,7 @@ void Hand::printHand()
 	std::cout << "\n" << std::endl;
 }
 
+//prints out all cards except the first one, for dealer class
 void Hand::printHandNotFirstCard()
 {
 	std::cout << "Hole Card" << std::endl;

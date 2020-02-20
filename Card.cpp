@@ -1,5 +1,6 @@
 #include "Card.h"
 
+//getters
 std::string Card::getSuit()
 {
 	return this->suit;
@@ -15,10 +16,11 @@ int Card::getValue() {
 	return this->value;
 }
 
+//constructor
 Card::Card(std::string suit, int rank)
 {
 	this->suit = suit;
-	
+	//assigns rank and value
 	switch (rank) {
 		case 11:
 			this->rank = "Jack";

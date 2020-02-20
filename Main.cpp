@@ -3,11 +3,10 @@
 
 
 int main() {
-    //Dealer* dealer = new Dealer();
-    //Player* player = new Player();
-
-    //player->requestHit(dealer);
+    //Game class
     BlackJack* game = new BlackJack();
+
+    //Start Game
     game->runGame();
     return 0;
 }

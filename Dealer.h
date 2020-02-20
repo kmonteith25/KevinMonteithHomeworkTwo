@@ -16,11 +16,11 @@ public:
 	void runAI();
 	Card* hit();
 	bool isHandBust();
-	Hand* hand;
 	Dealer();
 	~Dealer();
 
 private:
+	Hand* hand;
 	Deck* deck = new Deck();
 };
 

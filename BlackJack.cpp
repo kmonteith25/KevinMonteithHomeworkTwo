@@ -1,13 +1,17 @@
 #include "BlackJack.h"
 using namespace std;
 
+//Game loop
 void BlackJack::runGame()
 {
+	//Loops till user signals that they dont want to play
 	while(1) {
+		//reset all decks and hands
 		player->clearHand();
 		dealer->clearHand();
 		dealer->resetDeck();
-		string userResponse;
+
+		//Shuffle and deal cards
 		cout << "Shuffling Cards.... \n" << endl;
 		dealer->shuffle();
 		cout << "Dealing Cards....  \n" << endl;
@@ -17,6 +21,9 @@ void BlackJack::runGame()
 		player->printHand();
 		cout << "Dealer Cards:" << endl;
 		dealer->printHand();
+
+		//store userResponse and loop till bust or stand
+		string userResponse;
 		while (!player->isHandBust()) {
 			cout << "Would you like to Hit(H) or Stand(S)?" << endl;
 			cin >> userResponse;
@@ -33,10 +40,18 @@ void BlackJack::runGame()
 			cout << "\nYour Cards:" << endl;
 			player->printHand();
 		}
+
+		//dealer runs his turn
 		dealer->runAI();
+
+		//reveal dealer's cards
 		cout << "\nDealer Cards:" << endl;
 		dealer->revealHoleCardPrint();
+
+		//check who was the winner
 		checkWinner();
+
+		//Ask if the user would like to continue
 		cout << "Would you like to continue playing? (Y/N)" << endl;
 		cin >> userResponse;
 		std::transform(userResponse.begin(), userResponse.end(), userResponse.begin(), ::toupper);
@@ -49,6 +64,7 @@ void BlackJack::runGame()
 }
 
 void BlackJack::checkWinner() {
+	//logic to check who win/loses/ties
 	if (player->isHandBust() && dealer->isHandBust()) {
 		cout << "Both Dealer and Player busted, no winner" << endl;
 	}
