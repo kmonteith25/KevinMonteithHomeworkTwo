@@ -25,12 +25,12 @@ int Hand::getTotal()
 	int aceNum = 0;
 	int handTotal = 0;
 	for (int i = 0; i < hand.size(); i++) {
-		if (hand[i]->getRank() == "1") {
+		if (hand[i]->getValue() == 11) {
 			aceNum++;
 			handTotal += 11;
 		}
 		else {
-			handTotal += std::stoi(hand[i]->getRank());
+			handTotal += hand[i]->getValue();
 		}
 		
 	}
@@ -55,11 +55,20 @@ void Hand::addCard(Card* card)
 void Hand::printHand()
 {
 	for (int i = 0; i < hand.size(); i++) {
-		std::cout << hand[i]->getSuit() << " " << hand[i]->getRank() << std::endl;
+		std::cout << hand[i]->getRank() << " of " << hand[i]->getSuit() << std::endl;
 	}
-	
+	std::cout << "\n" << std::endl;
 }
 
+void Hand::printHandNotFirstCard()
+{
+	std::cout << "Hole Card" << std::endl;
+	for (int i = 1; i < hand.size(); i++) {
+		std::cout << hand[i]->getRank() << " of " << hand[i]->getSuit() << std::endl;
+	}
+	std::cout << "\n" << std::endl;
+
+}
 Hand::Hand()
 {
 }

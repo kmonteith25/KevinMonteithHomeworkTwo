@@ -2,12 +2,17 @@
 
 int Player::getHandTotal()
 {
-	return hand.getTotal();
+	return hand->getTotal();
 }
 
 void Player::addCardToHand(Card* card)
 {
-	this->hand.addCard(card);
+	this->hand->addCard(card);
+}
+
+void Player::clearHand()
+{
+	this->hand->clearHand();
 }
 
 void Player::splitHand()
@@ -26,7 +31,7 @@ void Player::requestDeal(Dealer* dealer)
 }
 void Player::printHand()
 {
-	hand.printHand();
+	hand->printHand();
 }
 
 void Player::requestStand()
@@ -35,12 +40,12 @@ void Player::requestStand()
 
 bool Player::isHandBust()
 {
-	return hand.isBust();
+	return hand->isBust();
 }
 
 Player::Player()
 {
-	
+	hand = new Hand();
 }
 
 Player::~Player()

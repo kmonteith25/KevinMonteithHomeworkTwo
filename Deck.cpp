@@ -22,6 +22,15 @@ void Deck::printDeck()
 
 Deck::Deck()
 {
+	resetDeck();
+}
+
+void Deck::clearDeck() {
+	deck.clear();
+	
+}
+
+void Deck::resetDeck() {
 	for (int i = 1; i <= 4; i++) {
 		std::string suit = "unknown";
 		switch (i) {
@@ -39,11 +48,10 @@ Deck::Deck()
 			break;
 		}
 		for (int j = 1; j <= 13; j++) {
-			deck.push_back(new Card(suit, std::to_string(j)));
+			deck.push_back(new Card(suit, j));
 		}
 	}
 }
-
 
 Deck::~Deck()
 {

@@ -16,6 +16,8 @@ public:
 	Card* getNextCard();
 	void printDeck();
 	Deck();
+	void clearDeck();
+	void resetDeck();
 	~Deck();
 };
 

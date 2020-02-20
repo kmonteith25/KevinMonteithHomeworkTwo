@@ -6,10 +6,11 @@
 class Player
 {
 private:
-	Hand hand;
+	Hand* hand;
 public:
 	int getHandTotal();
 	void addCardToHand(Card* card);
+	void clearHand();
 	void splitHand();
 	void requestHit(Dealer* dealer);
 	void requestDeal(Dealer* dealer);

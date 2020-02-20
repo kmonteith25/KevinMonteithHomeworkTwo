@@ -15,6 +15,7 @@ public:
 	int getTotal();
 	void addCard(Card* card);
 	void printHand();
+	void printHandNotFirstCard();
 	Hand();
 	~Hand();
 };
